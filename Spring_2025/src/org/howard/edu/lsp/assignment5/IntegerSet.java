@@ -8,21 +8,34 @@ public class IntegerSet  {
     private List<Integer> set = new ArrayList<Integer>();
 
     // Default Constructor
+    /**
+     * Default constructor
+     */
     public IntegerSet() {
 
     }
 
-    // Constructor if you want to pass in already initialized
+    /**
+     * Constructor if you want to pass in already initialized
+     * @param set ArrayList of integers
+     */
     public IntegerSet(ArrayList<Integer> set) {
         this.set = set;
     }
 
     // Clears the internal representation of the set. 5 pts.
+    /**
+     * Clears the internal representation of the set
+     */
     public void clear() {
         this.set.clear();
     };
 
     // Returns the length of the set. 5 pts.
+    /**
+     * Returns the length of the set
+     * @return int length of the set
+     */
     public int length() {
         return this.set.size();
     }; // returns the length
@@ -31,6 +44,12 @@ public class IntegerSet  {
      * Returns true if the 2 sets are equal, false otherwise;
      * Two sets are equal if they contain all of the same values in ANY order.  This overrides
      * the equal method from the Object class. 10 pts.
+     */
+    /**
+     * Returns true if the 2 sets are equal, false otherwise;
+     * Two sets are equal if they contain all of the same values in ANY order
+     * @param o Object to compare
+     * @return boolean true if the 2 sets are equal, false otherwise
      */
     public boolean equals(Object o) {
         if (o==null){
@@ -53,10 +72,19 @@ public class IntegerSet  {
     };
 
     // Returns true if the set contains the value, otherwise false. 5 pts.
+    /**
+     * Returns true if the set contains the value, otherwise false
+     * @param value int value to check
+     * @return boolean true if the set contains the value, otherwise false
+     */
     public boolean contains(int value) {
         return this.set.contains(value);
     };
     // Returns  the largest item in the set. 5 pts.
+    /**
+     * Returns the largest item in the set
+     * @return int largest item in the set
+     */
     public int largest()  {
         if (this.set.isEmpty()){
             return -1;
@@ -71,6 +99,10 @@ public class IntegerSet  {
     };
 
     // Returns the smallest item in the set. 5 pts.
+    /**
+     * Returns the smallest item in the set
+     * @return int smallest item in the set
+     */
     public int smallest()  {
         if (this.set.isEmpty()){
             return -1;
@@ -86,6 +118,10 @@ public class IntegerSet  {
     };
 
     // Adds an item to the set or does nothing it already there. 5 pts.
+    /**
+     * Adds an item to the set or does nothing it already there
+     * @param item int item to add
+     */
     public void add(int item) {
         if (this.set.contains(item)){
             return;
@@ -94,12 +130,20 @@ public class IntegerSet  {
     }; // adds item to the set or does nothing if it is in set
 
     // Removes an item from the set or does nothing if not there. 5 pts.
+    /**
+     * Removes an item from the set or does nothing if not there
+     * @param item int item to remove
+     */
     public void remove(int item) {
         Integer i = item;
         this.set.remove(i);
     };
 
     // Set union. 11 pts.
+    /**
+     * Set union
+     * @param intSetb IntegerSet to union with
+     */
     public void union(IntegerSet intSetb) {
          if (intSetb==null){    // if intSetb is null, return
              return;
@@ -114,6 +158,10 @@ public class IntegerSet  {
     };
 
     // Set intersection, all elements in s1 and s2. 12 pts.
+    /**
+     * Set intersection, all elements in s1 and s2
+     * @param intSetb IntegerSet to intersect with
+     */
     public void intersect(IntegerSet intSetb) {
         if (intSetb == null) {
             return;
@@ -132,6 +180,10 @@ public class IntegerSet  {
     }
 
     // Set difference, i.e., s1 –s2. 12 pts.
+    /**
+     * Set difference, i.e., s1 –s2
+     * @param intSetb IntegerSet to diff with
+     */
     public void diff(IntegerSet intSetb) {
         if (intSetb == null) {
             return;
@@ -151,6 +203,10 @@ public class IntegerSet  {
 // set difference, i.e. s1 - s2
 
     // Set complement, all elements not in s1. 11 pts.
+    /**
+     * Set complement, all elements not in s1
+     * @param intSetb IntegerSet to complement with
+     */
     public void complement(IntegerSet intSetb) {
         if(intSetb==null){
             return;
@@ -165,12 +221,18 @@ public class IntegerSet  {
     }
 
     // Returns true if the set is empty, false otherwise. 5 pts.
+    /** Returns true if the set is empty, false otherwise
+     * @return boolean true if the set is empty, false otherwise
+     */
     public boolean isEmpty(){
         return this.set.isEmpty();
     }
 
     // Return String representation of your set.  This overrides the equal method from
 // the Object class. 5 pts.
+    /** Return String representation of your set
+     * @return String representation of your set
+     */
     public String toString() {
         return this.set.toString();
     };	// return String representation of your set
